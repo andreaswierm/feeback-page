@@ -1,16 +1,21 @@
-import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
+import React, { PureComponent } from 'react'
+import ReactDOM from 'react-dom'
+import registerServiceWorker from './registerServiceWorker'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+
+import { Layout, FeedbackForm } from './components'
 
 class App extends PureComponent {
   render() {
     return (
-      <div>
-        Started Feedback page
-      </div>
+      <MuiThemeProvider>
+        <Layout>
+          <FeedbackForm />
+        </Layout>
+      </MuiThemeProvider>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'))
+registerServiceWorker()
